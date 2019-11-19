@@ -7,14 +7,21 @@ body{
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
 }
+/* nav
+************
+************* */
+nav{
+    color: white;
+    text-decoration: none;
+}
 /* paragraph
 ************
 ************* */
 .wrapper{
-    position: relative;
     width: 1000px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 .wrapper .cards{
     position: relative;
@@ -39,12 +46,94 @@ body{
 }
 
 .wrapper .cards:nth-child(1){
-    background: linear-gradient(45deg,#bf2d00,#ffef16);
+    background: linear-gradient(45deg,#fa3333,#ffa600);
+}
+.wrapper .cards .imgx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.wrapper .cards .imgx h2{
+    margin: 10px 0 0;
+    padding: 0;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.wrapper .cards .overlay {
+    position: relative;
+    top: 175px;
+    right: 124.5px;
+    width: 50px;
+    height: 50px;
+    background: rgb(0, 0, 0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0 , .2);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.wrapper .cards .overlay:hover{
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+    opacity: 0.9; 
+    border-radius: 0;
+}
+.wrapper .cards .overlay:before{
+    content: 'Read';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-delay: 0.5s;
+
+}
+.wrapper .cards .overlay:hover:before{
+    display: none;
+    transition-delay: 0s;
+}
+.wrapper .cards .content{
+    box-sizing: border-box;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition:0s;
+    color: #fff;
+}
+.wrapper .cards .overlay:hover ~ .content{
+    opacity: 1;
+    visibility: visible;
+    transition: 0.2s;
+    transition-delay: 0.5s;
+
+}
+.wrapper .cards .content p{
+    margin: 0;
+    padding: 0;
 }
 
 /* paragraph
 ************
 ************* */
+
 /* SKILLS
 ************
 ************* */
@@ -98,7 +187,7 @@ body{
     box-shadow: 0 2px 20px rgb(241, 68, 0);
 
 }
-.container div:nth-child(6n+2) label input:hover ~   span{
+.container div:nth-child(6n+2) label input:hover ~  span{
     background: #9c27b0;
     color: #fff;
     box-shadow: 0 2px 20px #ff3bcb;
