@@ -57,6 +57,7 @@ a .fire:before{
     background: rgb(233, 12, 12);
     animation: animate 5s linear infinite;
 }
+
 a .fire:after{
     border-radius: 40%;
     background: rgba(20, 20, 20, .5);
@@ -80,7 +81,7 @@ a .fire:after{
     justify-content: center;
     align-items: flex;
     position: relative;
-    top: 100px;
+    top: 50px;
     left: 600px;
 }
 .wrapper .cards{
@@ -188,6 +189,9 @@ a .fire:after{
 .wrapper .cards .content p{
     margin: 0;
     padding: 0;
+    position: absolute;
+    right: 200px;
+    top: 10px;
 }
 
 /* paragraph
@@ -203,7 +207,7 @@ a .fire:after{
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    top: 200px;
+    top: 50px;
     
 }
 .container div{
