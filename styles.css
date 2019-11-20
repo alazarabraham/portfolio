@@ -10,18 +10,78 @@ body{
 /* nav
 ************
 ************* */
-nav{
-    color: white;
+a{
+    position: relative;
+    padding: 20px 50px;
+    display: block;
     text-decoration: none;
+    text-transform: uppercase;
+    width: 200px;
+    overflow: hidden;
+}
+a span{
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 8px;
+
+}
+a .fire{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    background-repeat: #c66002;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+    transition: 0.5s;
+
+}
+a:hover .fire{
+    top: -80px;
+}
+a .fire:before,
+a .fire:after{
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-75%);
+    background: #000;
+}
+a .fire:before{
+    border-radius: 45%;
+    background: rgb(233, 12, 12);
+    animation: animate 5s linear infinite;
+}
+a .fire:after{
+    border-radius: 40%;
+    background: rgba(20, 20, 20, .5);
+    animation: animate 10s linear infinite;
+}
+@keyframes animate{
+    0%
+    {
+        transform: translate(-50%,-75%)rotate(0deg);
+    }
+    100%
+    {
+        transform: translate(-50%,-75%)rotate(360deg);
+    }
 }
 /* paragraph
 ************
 ************* */
 .wrapper{
     width: 1000px;
-    display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex;
+    position: relative;
+    top: 100px;
+    left: 600px;
 }
 .wrapper .cards{
     position: relative;
@@ -70,7 +130,7 @@ nav{
 .wrapper .cards .overlay {
     position: relative;
     top: 175px;
-    right: 124.5px;
+    right: 125px;
     width: 50px;
     height: 50px;
     background: rgb(0, 0, 0);
@@ -143,6 +203,7 @@ nav{
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    top: 200px;
     
 }
 .container div{
@@ -162,7 +223,7 @@ nav{
 {
     position: relative;
     display: inline-block;
-    background: #111111;
+    background: #222222;
     padding: 15px 30px;  
     color: rgb(255, 255, 255);
     text-shadow: 0 1px 4px rgba(0, 0 ,0, .5);
